@@ -13,85 +13,67 @@ end
 x = 0
 y = 0
 
-# puts "current position #{grid[x][y].reverse}"
+puts "-"*60
+puts "HELLO! WELCOME TO RASHID'S HACKY PACMAN SIMULATOR"
+puts "-"*60
+puts "Here is the grid:"
+puts "-"*60
+grid.reverse.each { |x|
+ puts x.join(" ")
+}
+puts "-"*60
+puts "Now let's play some pacman!"
+puts "-"*60
+puts "Available commands:
+1. Place: This will put pacman back to the starting position of the grid    
+2. Move: Pacman will move up on the grid
+3. Down: Pacman will move down on the grid
+4. Left: Pacman will move left on the grid
+5. Right: Pacman will move right on the grid
+6. Report: This will give you pacman's current location on the grid
+7. Exit: This will end the game"
 
-# position of grid
-# if gets.chomp == 'MOVE'
-#     y += 1
-#     puts "moved up on grid #{grid[x][y].reverse}" 
-# end
+puts "-"*60
+puts "NOTS: This pacman is cheeky and likes to run outside the grid:"
+puts "-"*60
 
-# if gets.chomp == 'DOWN'
-#     y -= 1
-#     puts "Moved down on the grid #{grid[x][y].reverse}"
-# end 
-
-# if gets.chomp == 'RIGHT'
-#     x += 1
-#     puts "moved to the right on grid #{grid[x][y].reverse}" 
-# end
-
-# if gets.chomp == 'LEFT'
-#     x -= 1
-#     puts "moved to the left on grid #{grid[x][y].reverse}" 
-# end
-
-# if gets.chomp == 'PLACE'
-    # puts "You are now back to starting position #{grid[x][y]}"
-# end
+puts "Please enter command:"
+puts "-"*60
 loop do
-puts "Command:"
+
 command = gets.chomp
 case command
+    when "PLACE", "Place", "place"
+        puts "You have moved to starting position #{grid[x][y]}"
+
     when "MOVE", "Move", "move"
         y += 1
-        puts "moved up on grid #{grid[x][y].reverse} NORTH" 
+        puts "moved NORTH to grid #{grid[x][y].reverse}" 
  
     when "DOWN", "Down", "down"
         y -= 1
-        puts "Moved to #{grid[x][y].reverse} SOUTH"    
+        puts "Moved SOUTH to grid #{grid[x][y].reverse}"    
  
     when "RIGHT", "Right", "right"
         x += 1
-        puts "Moved to #{grid[x][y].reverse} EAST" 
+        puts "Moved EAST to grid #{grid[x][y].reverse}" 
  
     when "LEFT", "Left", "left"
         x -= 1
-        puts "moved to the left on grid #{grid[x][y].reverse} WEST" 
+        puts "moved to WEST to grid #{grid[x][y].reverse}" 
  
     when "REPORT", "Report", "report"
-        puts "Current position #{grid[x][y].reverse}"        
+        puts "Current position on grid #{grid[x][y].reverse}"        
     
-    # when "PLACE", "Place", "place"
-    #     puts "You are now back to starting position #{grid[x][y]}"
-
     when "EXIT", "Exit", "exit"
     break
-    
+
     else
         puts "PLEASE ENTER A VALID COMMAND"
     
     end
 end
+
+puts "-"*60
 puts "Goodbye!"
-
-# Each array is a row, each element in each array is a column.
-# I added a string of each position inside each element so you can see how it works
-
-# grid
-[
-    ["0,0", "0,1", "0,2", "0,3", "0,4"], 
-    ["1,0", "1,1", "1,2", "1,3", "1,4"], 
-    ["2,0", "2,1", "2,2", "2,3", "2,4"], 
-    ["3,0", "3,1", "3,2", "3,3", "3,4"], 
-    ["4,0", "4,1", "4,2", "4,3", "4,4"]
-]
-
-# grid.reverse
-[
-    ["4,0", "4,1", "4,2", "4,3", "4,4"], 
-    ["3,0", "3,1", "3,2", "3,3", "3,4"], 
-    ["2,0", "2,1", "2,2", "2,3", "2,4"], 
-    ["1,0", "1,1", "1,2", "1,3", "1,4"], 
-    ["0,0", "0,1", "0,2", "0,3", "0,4"]
-]
+puts "-"*60
